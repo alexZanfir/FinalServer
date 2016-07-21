@@ -9,6 +9,9 @@ var a = location().then(function (loc) {
 	console.log(loc.city);
 		return (loc.city);
 	})
+
+var a =request.connection.remoteAddress;
+console.log('ip'+a);
 var form = '<form><input name="q" placeholder="City name" /><button>Go</button></form>';
 
 
