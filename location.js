@@ -1,7 +1,7 @@
 var request = require('request');
 var url = 'http://ipinfo.io/';
 //var ip = socket.remoteAddress;
-console.log(ip);
+//console.log(ip);
 
 module.exports = function () {
 	return new Promise(function (resolve, reject) {
