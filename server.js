@@ -19,8 +19,11 @@ app.use(middleware.logger);
 
 app.get('/', function (req, res) {
 
-	var a =req.connection.remoteAddress;
-console.log('ip'+a);
+	var ip = req.headers['x-forwarded-for'] || 
+     req.connection.remoteAddress || 
+     req.socket.remoteAddress ||
+     req.connection.socket.remoteAddress;
+	console.log('ip'+ip);
 	var city = req.query.q;
     console.log('city: ' +city);
     if (city === undefined) {
