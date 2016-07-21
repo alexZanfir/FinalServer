@@ -11,14 +11,16 @@ var a = location().then(function (loc) {
 		return (loc.city);
 	})
 
-var a =request.connection.remoteAddress;
-console.log('ip'+a);
+
 var form = '<form><input name="q" placeholder="City name" /><button>Go</button></form>';
 
 
 app.use(middleware.logger);
 
 app.get('/', function (req, res) {
+
+	var a =req.connection.remoteAddress;
+console.log('ip'+a);
 	var city = req.query.q;
     console.log('city: ' +city);
     if (city === undefined) {
