@@ -1,12 +1,11 @@
 var request = require('request');
-var url = 'http://ipinfo.io/';
-//var ip = socket.remoteAddress;
-//console.log(ip);
+var url = 'http://ip-api.com/json/?fields=city';
+
 
 module.exports = function (ip) {
 	return new Promise(function (resolve, reject) {
 		request({
-			url: url + ip ,
+			url: url ,
 			json: true
 		}, function (error, response, body) {
 			if (error) {
