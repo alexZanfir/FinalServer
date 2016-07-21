@@ -14,7 +14,7 @@ var form = '<form><input name="q" placeholder="City name" /><button>Go</button><
 
 app.use(middleware.logger);
 
-app.get('/about', function (req, res) {
+app.get('/', function (req, res) {
 	var city = req.query.q;
     console.log('city: ' +city);
     if (city === undefined) {
