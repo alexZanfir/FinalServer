@@ -34,7 +34,7 @@ app.get('/', function (req, res) {
 	var city = req.query.q;
     console.log('city: ' +city);
     if (city === undefined) {
-		location().then(function (loc) {
+		location(ip).then(function (loc) {
 			return weather(loc.city);
 		}).then(function (currentWeather) {
 			console.log(currentWeather);

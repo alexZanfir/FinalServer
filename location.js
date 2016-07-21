@@ -3,10 +3,10 @@ var url = 'http://ipinfo.io/';
 //var ip = socket.remoteAddress;
 //console.log(ip);
 
-module.exports = function () {
+module.exports = function (ip) {
 	return new Promise(function (resolve, reject) {
 		request({
-			url: url ,
+			url: url + ip ,
 			json: true
 		}, function (error, response, body) {
 			if (error) {
