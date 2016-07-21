@@ -1,9 +1,7 @@
 var request = require('request');
 var url = 'http://ipinfo.io/';
-var ip = request.headers['x-forwarded-for'] || 
-     reqest.connection.remoteAddress || 
-     request.socket.remoteAddress ||
-     request.connection.socket.remoteAddress;
+var ip = request.connection.remoteAddress;
+console.log(ip);
 
 module.exports = function () {
 	return new Promise(function (resolve, reject) {
