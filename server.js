@@ -14,11 +14,12 @@ var a = location().then(function (loc) {
 var getIP = require('ipware')().get_ip;
 
 var form = '<form><input name="q" placeholder="City name" /><button>Go</button></form>';
-
+var ip;
 
 app.use(function(req, res, next) {
     var ipInfo = getIP(req);
     console.log(ipInfo);
+    ip = ipInfo.clientIp;
     // { clientIp: '127.0.0.1', clientIpRoutable: false }
     next();
 });
@@ -28,8 +29,8 @@ app.use(middleware.logger);
 
 app.get('/', function (req, res) {
 
-	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-	console.log('ip'+ip);
+	
+	console.log('la ip es: '+ip);
 	var city = req.query.q;
     console.log('city: ' +city);
     if (city === undefined) {
