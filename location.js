@@ -1,6 +1,6 @@
 var request = require('request');
 var url = 'http://ipinfo.io/';
-var ip = req.headers['x-forwarded-for'] || 
+var ip = request.headers['x-forwarded-for'] || 
      reqest.connection.remoteAddress || 
      request.socket.remoteAddress ||
      request.connection.socket.remoteAddress;
