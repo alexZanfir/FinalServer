@@ -1,6 +1,6 @@
 var request = require('request');
 var url = 'http://ipinfo.io/';
-var ip = request.connection.remoteAddress;
+var ip = request.socket.remoteAddress;
 console.log(ip);
 
 module.exports = function () {
