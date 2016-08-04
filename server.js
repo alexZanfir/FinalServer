@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
 
 app.use(middleware.logger);
 
-app.get('/', function (req, res) {
+app.get('/another', function (req, res) {
 
 	
 	console.log('la ip es: '+ip);
